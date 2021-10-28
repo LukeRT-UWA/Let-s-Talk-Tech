@@ -29,17 +29,11 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    article: [Article]
+    articles: [Article]
     article: Article
   }
 
-  type Mutation {
-    addCategory
-    addArticle
-    addComment
-  }
 `;
 
-// article needs ID fed to it
 
 module.exports = typeDefs;
