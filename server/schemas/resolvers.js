@@ -6,7 +6,7 @@ const resolvers = {
       return Category.find({});
     },
     articles: async () => {
-      Article.find({})
+      return Article.find({})
     },
     //need to feed ID and serch by ID
     article: async () => {

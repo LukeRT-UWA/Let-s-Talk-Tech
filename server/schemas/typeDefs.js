@@ -29,6 +29,7 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
+    category: Category
     articles: [Article]
     article: Article
   }
