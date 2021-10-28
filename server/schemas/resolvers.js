@@ -1,13 +1,16 @@
-const { Tech, Matchup } = require('../models');
+const { Category, Article, User } = require('../models');
 
 const resolvers = {
   Query: {
-    tech: async () => {
-      return Tech.find({});
+    categories: async () => {
+      return Category.find({});
     },
-    matchups: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Matchup.find(params);
+    articles: async () => {
+      Article.find({})
+    },
+    //need to feed ID and serch by ID
+    article: async () => {
+      return Article.find({});
     },
   },
   Mutation: {
