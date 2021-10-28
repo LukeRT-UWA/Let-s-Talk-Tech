@@ -10,6 +10,10 @@ const categorySchema = new Schema({
     type: String,
     required: true,
   },
+  article: {
+    type: Schema.Types.ObjectId,
+    ref: 'Article'
+  }
 });
 
 const Category = model('Category', categorySchema);
