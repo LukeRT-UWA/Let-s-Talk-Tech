@@ -11,28 +11,28 @@ const typeDefs = gql`
   type Category {
     _id: ID!
     name: String!
+    description: String!
   }
 
   type Article {
     _id: ID!
-    tech1: String!
-    tech2: String!
-    tech1_votes: Int
-    tech2_votes: Int
+    title: String!
+    link: String!
+    description: String!
   }
 
   type Comment {
     _id: ID!
+    commentText: String
+    createdAt: String
   }
 
   type Query {
-    tech: [Tech]
-    matchups(_id: String): [Matchup]
+
   }
 
   type Mutation {
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
+    
   }
 `;
 
