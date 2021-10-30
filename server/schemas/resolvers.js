@@ -5,12 +5,14 @@ const resolvers = {
     categories: async () => {
       return Category.find({});
     },
+    category: async (parent, { categoryId}) => {
+      return Category.findOne({_id: categoryId});
+    },
     articles: async () => {
       return Article.find({})
     },
-    //need to feed ID and serch by ID
-    article: async () => {
-      return Article.find({});
+    article: async (parent, { articleId }) => {
+      return Article.findOne({_id: articleId});
     },
   },
 };

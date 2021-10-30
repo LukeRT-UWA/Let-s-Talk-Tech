@@ -29,9 +29,15 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    category: Category
+    category(categoryId: ID!): Category
     articles: [Article]
-    article: Article
+    article(articleId: ID!): Article
+  }
+
+  type Mutation {
+    createCategory(name: String!, description: String!): Category 
+    createArticle(categoryId: ID!, title: String!, link: String!, description: String!): Article
+    createComment(articleId: ID!, commentText: String): Comment
   }
 
 `;
