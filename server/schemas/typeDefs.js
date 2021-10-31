@@ -10,8 +10,9 @@ const typeDefs = gql`
 
   type Category {
     _id: ID!
-    name: String!
-    description: String!
+    name: String
+    description: String
+    article: [Article]
   }
 
   type Article {
@@ -19,6 +20,7 @@ const typeDefs = gql`
     title: String!
     link: String!
     description: String!
+    comment: [Comment]
   }
 
   type Comment {
@@ -31,7 +33,8 @@ const typeDefs = gql`
     categories: [Category]
     category(categoryId: ID!): Category
     articles: [Article]
-    article(articleId: ID!): Article
+    article(articleId: ID!): Category
+    comments(articleId: ID!): [Comment]
   }
 
   type Mutation {
