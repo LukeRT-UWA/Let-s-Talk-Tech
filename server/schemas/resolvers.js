@@ -8,8 +8,8 @@ const resolvers = {
     category: async (parent, { categoryId }) => {
       return Category.findOne({_id: categoryId}).populate('articles');
     },
-    articles: async () => {
-      return Article.find()
+    articles: async (parent, {categoryId}) => {
+      return Article.find({categoryId})
     },
     article: async (parent, { articleId }) => {
       return Article.findOne({_id: articleId});
@@ -25,7 +25,7 @@ const resolvers = {
       
       await Category.findOneAndUpdate(
         {_id: categoryId},
-        {$addToSet: { articles: article}}
+        {$addToSet: { articles: article._id}}
       )
       return article
     },

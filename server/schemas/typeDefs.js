@@ -12,11 +12,12 @@ const typeDefs = gql`
     _id: ID!
     name: String
     description: String
-    articles: Article
+    articles: [Article]
   }
 
   type Article {
     _id: ID!
+    categoryId: ID!
     title: String!
     link: String!
     description: String!
@@ -32,7 +33,7 @@ const typeDefs = gql`
   type Query {
     categories: [Category]
     category(categoryId: ID!): Category
-    articles: [Article]
+    articles(categoryId: ID!): [Article]
     article(articleId: ID!): Article
     comments(articleId: ID!): [Comment]
   }
