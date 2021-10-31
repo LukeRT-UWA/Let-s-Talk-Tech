@@ -21,12 +21,20 @@ const resolvers = {
       return category
     },
     createArticle: async (parent, args) => {
-      const article = await Category.create(args)
+      const article = await Article.create(args)
       return article
     },
-    createComment: async (parent, args) => {
-      const comment = await Comment.create(args)
-      return comment
+    createComment: async (parent, { articleId, commentText }) => {
+      return Article.findOneAndUpdate(
+        { _id: articleId },
+        {
+          $addToSet: { comments: { commentText } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
     },
   }
 };
