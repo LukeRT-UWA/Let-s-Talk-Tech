@@ -12,7 +12,7 @@ const typeDefs = gql`
     _id: ID!
     name: String
     description: String
-    article: [Article]
+    articles: [Article]
   }
 
   type Article {
@@ -33,7 +33,7 @@ const typeDefs = gql`
     categories: [Category]
     category(categoryId: ID!): Category
     articles: [Article]
-    article(articleId: ID!): Category
+    article(articleId: ID!): Article
     comments(articleId: ID!): [Comment]
   }
 
