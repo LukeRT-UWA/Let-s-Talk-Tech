@@ -5,7 +5,7 @@ const resolvers = {
     categories: async () => {
       return Category.find({}).populate('articles');
     },
-    category: async (parent, { categoryId}) => {
+    category: async (parent, { categoryId }) => {
       return Category.findOne({_id: categoryId}).populate('articles');
     },
     articles: async () => {
@@ -20,8 +20,13 @@ const resolvers = {
       const category = await Category.create(args);
       return category
     },
-    createArticle: async (parent, args) => {
-      const article = await Article.create(args)
+    createArticle: async (parent, {title, link, description, categoryId}) => {
+      const article = await Article.create({title, link, description, categoryId})
+      
+      await Category.findOneAndUpdate(
+        {_id: categoryId},
+        {$addToSet: { articles: article}}
+      )
       return article
     },
     createComment: async (parent, { articleId, commentText }) => {
