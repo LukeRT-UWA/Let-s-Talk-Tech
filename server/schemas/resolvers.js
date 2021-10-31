@@ -9,7 +9,7 @@ const resolvers = {
       return Category.findOne({_id: categoryId}).populate('articles');
     },
     articles: async () => {
-      return Article.find({})
+      return Article.find()
     },
     article: async (parent, { articleId }) => {
       return Article.findOne({_id: articleId});
