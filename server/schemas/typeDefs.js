@@ -37,7 +37,7 @@ const typeDefs = gql`
   type Mutation {
     createCategory(name: String!, description: String!): Category 
     createArticle(categoryId: ID!, title: String!, link: String!, description: String!): Article
-    createComment(articleId: ID!, commentText: String): Comment
+    createComment(articleId: ID!, commentText: String!): Comment
   }
 
 `;
