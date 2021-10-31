@@ -3,10 +3,10 @@ const { Category, Article, User } = require('../models');
 const resolvers = {
   Query: {
     categories: async () => {
-      return Category.find({});
+      return Category.find({}).populate('articles');
     },
     category: async (parent, { categoryId}) => {
-      return Category.findOne({_id: categoryId});
+      return Category.findOne({_id: categoryId}).populate('articles');
     },
     articles: async () => {
       return Article.find({})
