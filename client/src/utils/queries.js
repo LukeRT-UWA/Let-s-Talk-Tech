@@ -1,45 +1,65 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_CATEGORIES = gql`
-  query categories {
+query categories {
     categories {
       _id
       name
       description
+      articles {_id categoryId title link description}
     }
   }
 `;
 
 export const QUERY_CATEGORY = gql`
-  query category($categoryId: ID!) {
+query category($categoryId: ID!) {
     category(categoryId: $categoryId) {
       _id
       name
       description
+     	articles {
+        _id
+        categoryId
+        title
+      	link
+      	description}
     }
   }
 `;
 
+export const QUERY_ARTICLES = gql`
+query articles($categoryId: ID!){
+    articles(categoryId: $categoryId){
+      _id
+      title
+      link
+      description
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+`;
 export const QUERY_ARTICLE = gql`
-  query matchups($_id: String) {
-    matchups(_id: $_id) {
+query article($articleId: ID!){
+    article(articleId: $articleId){
       _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
+      title
+      link
+      description
+      comments {
+        _id
+        commentText
+      }
     }
   }
-`;
-
+`
 export const QUERY_COMMENT = gql`
-  query matchups($_id: String) {
-    matchups(_id: $_id) {
+query comment($articleId:ID!){
+    comments(articleId: $articleId) {
       _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
+      commentText
     }
   }
 `;
