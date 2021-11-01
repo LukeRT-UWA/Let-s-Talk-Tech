@@ -1,6 +1,8 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Cards from "./components/Cards"
+import NavBar from "./components/NavBar"
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
@@ -9,7 +11,10 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Cards />
+      <Router>
+        <NavBar />
+        <Cards />
+      </Router>
     </ApolloProvider>
   );
 }
