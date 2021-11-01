@@ -6,7 +6,12 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-  }  
+  }
+  
+  type Auth {
+    token: ID!
+    user: User
+  }
 
   type Category {
     _id: ID!
@@ -38,6 +43,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     createCategory(name: String!, description: String!): Category 
     createArticle(categoryId: String, title: String!, link: String!, description: String!): Article
     createComment(articleId: ID!, commentText: String!): Article
