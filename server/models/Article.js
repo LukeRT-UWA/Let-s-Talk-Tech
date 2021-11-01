@@ -15,6 +15,10 @@ const articleSchema = new Schema({
     type: String,
     required: true,
   },
+  categoryId: {
+    type: String,
+    required: true,
+  },
   comments: [
     {
       commentText: {
@@ -22,11 +26,6 @@ const articleSchema = new Schema({
         required: true,
         minlength: 1,
         maxlength: 280,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
       },
     },
   ],

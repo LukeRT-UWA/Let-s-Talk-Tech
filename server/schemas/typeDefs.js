@@ -17,17 +17,16 @@ const typeDefs = gql`
 
   type Article {
     _id: ID!
-    categoryId: ID!
+    categoryId: String
     title: String!
     link: String!
     description: String!
-    comment: [Comment]
+    comments: [Comment]
   }
 
   type Comment {
     _id: ID!
     commentText: String
-    createdAt: String
   }
 
   type Query {
@@ -40,7 +39,7 @@ const typeDefs = gql`
 
   type Mutation {
     createCategory(name: String!, description: String!): Category 
-    createArticle(categoryId: ID!, title: String!, link: String!, description: String!): Article
+    createArticle(categoryId: String, title: String!, link: String!, description: String!): Article
     createComment(articleId: ID!, commentText: String!): Article
   }
 
