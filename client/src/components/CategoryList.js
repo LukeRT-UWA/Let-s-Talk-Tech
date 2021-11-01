@@ -9,7 +9,7 @@ const CategoryList = ({ categories }) => {
   return (
     categories.map((categories) => (
   <Card key={categories._id}
-    href='#card-example-link-card'
+    href={`/articles/${categories._id}`}
     header={categories.name}
     meta='Friend'
     description={categories.description}

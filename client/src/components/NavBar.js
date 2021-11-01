@@ -10,7 +10,7 @@ const NavBar = () => {
         
         >
             <Link to="/">
-            <h1 >Tech Thoughts</h1>
+            <h1 >Let's Talk Tech</h1>
             </Link>
         </Menu.Item>
 
