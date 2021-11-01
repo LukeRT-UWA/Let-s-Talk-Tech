@@ -16,6 +16,8 @@
     "concurrently": "^5.3.0"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1"
+    "bcrypt": "^5.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.4"
   }
 }
