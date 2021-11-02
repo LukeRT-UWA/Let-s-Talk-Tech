@@ -4,12 +4,20 @@ import CategoryList from "../components/CategoryList"
 
 import { QUERY_CATEGORIES } from '../utils/queries';
 
+const styles = {
+    headerStyle: {
+        textAlign: 'center'
+    }
+}
+
 const Home = () => {
     const { loading, data } = useQuery(QUERY_CATEGORIES);
     const categories = data?.categories || [];
   
     return (
-        <div className="col-12 col-md-10 my-3">
+        
+        <div>
+            <h1 style={styles.headerStyle}>Articles List</h1>
         {loading ? (
           <div>Loading...</div>
         ) : (
