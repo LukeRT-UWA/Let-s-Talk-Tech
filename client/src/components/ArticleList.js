@@ -5,7 +5,8 @@ import { Card, Divider } from 'semantic-ui-react'
 const styles = {
     cardStyle:{
       margin: '10px',
-      height: '180px'
+      height: '120px',
+      width: '800px'
     }
 }
 
@@ -15,9 +16,9 @@ const ArticleList = ({ articles }) => {
     }
   
     return (
-      <Card.Group centered>
+      <Card.Group centered itemsPerRow={1} >
         {articles.map((articles) => (
-          <Link to={`/articles/${articles._id}`}>
+          <Link to={`/article/${articles._id}`}>
             <Card color='blue' key={articles._id} link style={styles.cardStyle}>
               <Card.Content>
                 <Card.Header>{articles.title}</Card.Header>

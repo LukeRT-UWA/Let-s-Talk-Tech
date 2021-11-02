@@ -23,7 +23,7 @@ function App() {
             <Route exact path="/articles/:categoryId">
                   <Articles />
             </Route>
-            <Route exact path="/articles/:articleId">
+            <Route exact path="/article/:articleId">
                   <SingleArticle />
             </Route>
           </div>
