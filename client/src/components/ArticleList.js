@@ -12,7 +12,7 @@ const styles = {
 
 const ArticleList = ({ articles }) => {
     if (!articles.length) {
-      <h3>Can't find any articles!</h3>
+      return <h3>Can't find any articles!</h3>
     }
   
     return (
