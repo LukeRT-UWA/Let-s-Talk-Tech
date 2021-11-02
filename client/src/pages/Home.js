@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import CategoryList from "../components/CategoryList"
-
+import CategoryList from "../components/CategoryList";
+import CategoryForm from "../components/CategoryForm";
 import { QUERY_CATEGORIES } from '../utils/queries';
 
 const styles = {
@@ -25,6 +25,10 @@ const Home = () => {
             categories={categories}
           />
         )}
+        
+ 
+      
+          <CategoryForm />
       </div>
     );
   };

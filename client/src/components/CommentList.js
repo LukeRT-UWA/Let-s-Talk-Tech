@@ -7,7 +7,7 @@ const styles = {
       textAlign: 'center'
   },
   commentStyle: {
-      height: '80px'
+      m: '20px'
   }
 }
 
@@ -20,14 +20,13 @@ const CommentList = ({ comments }) => {
     return (
       <Comment.Group>
         {comments.map((comments) => (
-            <Comment color='blue' key={comments._id}>
-              <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
-              <Comment.Author> User </Comment.Author>
-              
-              <Comment.Text>Comment Text: {comments.commentText}</Comment.Text>
-              
+            <Comment color='blue' key={comments._id} >
+              <Comment.Avatar src='https://portal.staralliance.com/cms/aux-pictures/prototype-images/avatar-default.png/@@images/image.png' />
+                <Comment.Content>
+                  <Comment.Author>User</Comment.Author>
+                  <Comment.Text>Comment Text: {comments.commentText}</Comment.Text>
+                </Comment.Content>
             </Comment>
-            
         ))}
       </Comment.Group>
     )

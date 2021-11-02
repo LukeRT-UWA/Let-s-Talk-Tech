@@ -42,7 +42,7 @@ const SingleArticle = () => {
             <div>
                 <div>
                     <Card.Group>
-                        <Card style={styles.cardStyle} fluid>
+                        <Card color='blue' style={styles.cardStyle} fluid>
                             <h2>{article.link}</h2>
                             <h3>{article.description}</h3>
                         </Card>
