@@ -18,7 +18,7 @@ const CategoryList = ({ categories }) => {
     <Card.Group centered>
       {categories.map((categories) => (
         <Link to={`/articles/${categories._id}`}>
-          <Card key={categories._id} link style={styles.cardStyle}>
+          <Card color='blue' key={categories._id} link style={styles.cardStyle}>
             <Card.Content>
               <Card.Header>{categories.name}</Card.Header>
               <Divider />
