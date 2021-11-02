@@ -17,7 +17,7 @@ const Home = () => {
     return (
         
         <div>
-            <h1 style={styles.headerStyle}>Articles List</h1>
+            <h1 style={styles.headerStyle}>Categories List</h1>
         {loading ? (
           <div>Loading...</div>
         ) : (
