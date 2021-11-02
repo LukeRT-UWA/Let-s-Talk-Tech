@@ -1,5 +1,13 @@
 import React from 'react'
-import { Card } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
+import { Card, Divider } from 'semantic-ui-react'
+
+const styles = {
+    cardStyle:{
+      margin: '10px',
+      height: '180px'
+    }
+}
 
 const CategoryList = ({ categories }) => {
   if (!categories.length) {
@@ -7,14 +15,20 @@ const CategoryList = ({ categories }) => {
   }
 
   return (
-    categories.map((categories) => (
-  <Card key={categories._id}
-    href={`/articles/${categories._id}`}
-    header={categories.name}
-    meta='Friend'
-    description={categories.description}
-  />
-  )))
+    <Card.Group centered>
+      {categories.map((categories) => (
+        <Link to={`/articles/${categories._id}`}>
+          <Card key={categories._id} link style={styles.cardStyle}>
+            <Card.Content>
+              <Card.Header>{categories.name}</Card.Header>
+              <Divider />
+              <Card.Description>{categories.description}</Card.Description>    
+            </Card.Content>
+          </Card>
+        </Link>  
+      ))}
+    </Card.Group>
+  )
 }
 
 export default CategoryList
