@@ -12,7 +12,7 @@ function LoginModal() {
         trigger={<Button content ="Login" icon="user" size="big" />}
       >
         <Segment placeholder>
-    <Grid columns={2} relaxed='very' stackable>
+    <Grid columns={2} relaxed='very'g>
       <Grid.Column>
         <Form>
           <Form.Input

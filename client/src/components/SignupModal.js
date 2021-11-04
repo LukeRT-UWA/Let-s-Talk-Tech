@@ -13,7 +13,7 @@ function SignupModal() {
         trigger={<Button content ="Sign up" icon="signup" size="big"/>}
       >
         <Segment placeholder>
-    <Grid columns={2} relaxed='very' stackable>
+    <Grid columns={2} relaxed='very'>
 
 
       <Grid.Column verticalAlign='middle'>
