@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import CommentList from "../components/CommentList"
-
+import CommentForm from "../components/CommentForm"
 
 import { QUERY_ARTICLE } from '../utils/queries';
 import { Card } from 'semantic-ui-react';
@@ -53,6 +53,9 @@ const SingleArticle = () => {
                 </div>
             </div>
         )}
+
+
+        <CommentForm articleId={articleId}/>
       </div>
     );
   };

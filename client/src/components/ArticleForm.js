@@ -19,10 +19,11 @@ const ArticleForm = ({ categoryId }) => {
         const { articles } = cache.readQuery({ 
           query: QUERY_ARTICLES_ONLY,
           variables: { categoryId } });
-
+          console.log(articles)
         cache.writeQuery({
           query: QUERY_ARTICLES_ONLY,
           data: { articles: [createArticle, ...articles] },
+          variables: { categoryId }
         });
       } catch (e) {
         console.error(e);
