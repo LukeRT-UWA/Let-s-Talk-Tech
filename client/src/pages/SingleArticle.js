@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import CommentList from "../components/CommentList"
 import CommentForm from "../components/CommentForm"
-
+import { Loader } from 'semantic-ui-react'
 import { QUERY_ARTICLE } from '../utils/queries';
 import { Card } from 'semantic-ui-react';
 
@@ -37,7 +37,7 @@ const SingleArticle = () => {
         <div>
             <h1 style={styles.headerStyle}>{article.title}</h1>
         {loading ? (
-          <div>Loading...</div>
+          <Loader active inline='centered' />
         ) : (
             <div>
                 <div>

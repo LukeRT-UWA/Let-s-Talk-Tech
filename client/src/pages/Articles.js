@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-
+import { Loader } from 'semantic-ui-react'
 import ArticleList from "../components/ArticleList"
 import ArticleForm from "../components/ArticleForm"
 import { QUERY_ARTICLES } from '../utils/queries';
@@ -29,7 +29,7 @@ const Articles = () => {
         <div>
             <h1 style={styles.headerStyle}>Articles List</h1>
         {loading ? (
-          <div>Loading...</div>
+          <Loader active inline='centered' />
         ) : (
           <ArticleList
             articles={articles}

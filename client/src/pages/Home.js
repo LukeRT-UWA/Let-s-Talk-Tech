@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import CategoryList from "../components/CategoryList";
 import CategoryForm from "../components/CategoryForm";
 import { QUERY_CATEGORIES } from '../utils/queries';
+import { Loader } from 'semantic-ui-react'
 
 const styles = {
     headerStyle: {
@@ -19,7 +20,7 @@ const Home = () => {
         <div>
             <h1 style={styles.headerStyle}>Categories List</h1>
         {loading ? (
-          <div>Loading...</div>
+          <Loader active inline='centered' />
         ) : (
           <CategoryList
             categories={categories}
