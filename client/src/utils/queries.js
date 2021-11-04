@@ -41,6 +41,18 @@ query articles($categoryId: ID!){
     }
   }
 `;
+
+export const QUERY_ARTICLES_ONLY = gql`
+query articles($categoryId: ID!){
+    articles(categoryId: $categoryId){
+      _id
+      title
+      link
+      description
+    }
+  }
+`;
+
 export const QUERY_ARTICLE = gql`
 query article($articleId: ID!){
     article(articleId: $articleId){

@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_CATEGORY = gql`
+export const CREATE_CATEGORY = gql`
 mutation createCategory($name: String!, $description: String!) {
     createCategory(name: $name, description: $description) {
       _id

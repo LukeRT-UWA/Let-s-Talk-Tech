@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 
 import ArticleList from "../components/ArticleList"
-
+import ArticleForm from "../components/ArticleForm"
 import { QUERY_ARTICLES } from '../utils/queries';
 
 const styles = {
@@ -35,8 +35,11 @@ const Articles = () => {
             articles={articles}
           />
         )}
+
+<ArticleForm categoryId={categoryId}/>
+
       </div>
     );
-  };
-  //
+}
+
   export default Articles;

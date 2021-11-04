@@ -2,23 +2,27 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { CREATE_CATEGORY } from '../utils/mutations';
-import { QUERY_CATEGORIES } from '../utils/queries';
+import { ADD_ARTICLE } from '../utils/mutations';
+import { QUERY_ARTICLES } from '../utils/queries';
+import { QUERY_ARTICLES_ONLY } from '../utils/queries';
 
 // import Auth from '../../utils/auth';
 
-const CategoryForm = () => {
-  const [name, setName] = useState('');
+const ArticleForm = ({ categoryId }) => {
+  const [title, setTitle] = useState('');
+  const [link, setLink] = useState('');
   const [description, setDescription] = useState('');
 
-  const [createCategory, { error }] = useMutation(CREATE_CATEGORY, {
-    update(cache, { data: { createCategory } }) {
+  const [createArticle, { error }] = useMutation(ADD_ARTICLE, {
+    update(cache, { data: { createArticle } }) {
       try {
-        const { categories } = cache.readQuery({ query: QUERY_CATEGORIES });
+        const { articles } = cache.readQuery({ 
+          query: QUERY_ARTICLES_ONLY,
+          variables: { categoryId } });
 
         cache.writeQuery({
-          query: QUERY_CATEGORIES,
-          data: { categories: [createCategory, ...categories] },
+          query: QUERY_ARTICLES_ONLY,
+          data: { articles: [createArticle, ...articles] },
         });
       } catch (e) {
         console.error(e);
@@ -31,13 +35,14 @@ const CategoryForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await createCategory({
-        variables: {name, description},
+      const { data } = await createArticle({
+        variables: {categoryId, title, link, description},
       });
 
 
-      setName('');
-      setDescription('')
+      setTitle('');
+      setLink('');
+      setDescription('');
     } catch (err) {
       console.error(err);
     }
@@ -46,17 +51,20 @@ const CategoryForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'categoryName') {
-        setName(value)
+    if (name === 'articleName') {
+        setTitle(value)
     }
-    else if (name === 'categoryDescription') {
+    else if (name === 'articleLink') {
+        setLink(value)
+    }
+    else if (name === 'articleDescription') {
         setDescription(value)
-    }
+  }
   };
 
   return (
     <div>
-      <h3>Want to add a category?</h3>
+      <h3>Want to add an article?</h3>
 
       {/* {Auth.loggedIn()  */}
       {(true) ? (
@@ -67,9 +75,9 @@ const CategoryForm = () => {
           >
             <div className="col-12">
             <textarea
-                name="categoryName"
-                placeholder="Category Name"
-                value={name}
+                name="articleName"
+                placeholder="Article Title"
+                value={title}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5' }}
                 onChange={handleChange}
@@ -77,8 +85,18 @@ const CategoryForm = () => {
             </div>
             <div className="col-12 col-lg-9">
             <input
-                name="categoryDescription"
-                placeholder="Category Description"
+                name="articleLink"
+                placeholder="Link to article"
+                value={link}
+                className="form-input w-100"
+                onChange={handleChange}
+            />
+            
+            </div>
+            <div className="col-12 col-lg-9">
+            <input
+                name="articleDescription"
+                placeholder="Article Description"
                 value={description}
                 className="form-input w-100"
                 onChange={handleChange}
@@ -88,7 +106,7 @@ const CategoryForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Category
+                Add Article
               </button>
             </div>
             {error && (
@@ -100,7 +118,7 @@ const CategoryForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in add a category. Please{' '}
+          You need to be logged in add an article. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
@@ -108,4 +126,4 @@ const CategoryForm = () => {
   );
 };
 
-export default CategoryForm;
+export default ArticleForm;
