@@ -50,7 +50,10 @@ const CategoryForm = () => {
     const { name, value } = event.target;
 
     if (name === 'categoryText') {
-      setFormState(value);
+        setFormState({ ...formState, [name]: value });
+    }
+    else if (name !== 'categoryText') {
+    setFormState({ ...formState, [name]: value });
     }
   };
 
@@ -68,8 +71,19 @@ const CategoryForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="categoryText"
+                placeholder="Category Name"
+                value={formState.name}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+            </div>
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="categoryText"
                 placeholder="Category Description"
-                // value={description}
+                value={formState.description}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
