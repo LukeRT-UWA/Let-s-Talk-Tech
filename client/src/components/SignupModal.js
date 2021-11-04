@@ -1,7 +1,8 @@
 import React from 'react'
 import { Modal, Header, Button, Image, Grid, Form, Segment, Divider } from 'semantic-ui-react'
+import LoginModal from "./LoginModal"
 
-function LoginModal() {
+function SignupModal() {
     const [open, setOpen] = React.useState(false)
   
     return (
@@ -9,10 +10,16 @@ function LoginModal() {
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={<Button>Login/Signup</Button>}
+        trigger={<Button content ="Sign up" icon="signup" size="big"/>}
       >
         <Segment placeholder>
     <Grid columns={2} relaxed='very' stackable>
+
+
+      <Grid.Column verticalAlign='middle'>
+        <Button content ="Login" icon="user" size="big" onClick={() => setOpen(false)}/>
+      </Grid.Column>
+
       <Grid.Column>
         <Form>
           <Form.Input
@@ -28,13 +35,10 @@ function LoginModal() {
             type='password'
           />
 
-          <Button content='Login' primary />
+          <Button content='Register' primary />
         </Form>
       </Grid.Column>
 
-      <Grid.Column verticalAlign='middle'>
-        <Button content='Sign up' icon='signup' size='big' />
-      </Grid.Column>
     </Grid>
 
     <Divider vertical>Or</Divider>
@@ -43,4 +47,4 @@ function LoginModal() {
     )
   }
 
-export default LoginModal
+export default SignupModal

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal, Header, Button, Image, Grid, Form, Segment, Divider } from 'semantic-ui-react'
-
+import SignupModal from "./SignupModal"
 function LoginModal() {
     const [open, setOpen] = React.useState(false)
   
@@ -9,7 +9,7 @@ function LoginModal() {
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={<Button>Login/Signup</Button>}
+        trigger={<Button content ="Login" icon="user" size="big" />}
       >
         <Segment placeholder>
     <Grid columns={2} relaxed='very' stackable>
@@ -33,7 +33,8 @@ function LoginModal() {
       </Grid.Column>
 
       <Grid.Column verticalAlign='middle'>
-        <Button content='Sign up' icon='signup' size='big' />
+        {/* <Button content='Sign up' icon='signup' size='big' /> */}
+        <SignupModal />
       </Grid.Column>
     </Grid>
 
