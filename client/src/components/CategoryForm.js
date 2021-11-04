@@ -32,7 +32,8 @@ const CategoryForm = () => {
     try {
       const { data } = await addCategory({
         variables: {
-          categoryText,
+        //   name,
+        //   description
         //   thoughtAuthor: Auth.getProfile().data.username,
         },
       });
@@ -66,7 +67,7 @@ const CategoryForm = () => {
               <textarea
                 name="categoryText"
                 placeholder="Category Description"
-                value={categoryText}
+                // value={description}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
