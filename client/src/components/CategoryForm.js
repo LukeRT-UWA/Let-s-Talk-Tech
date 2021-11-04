@@ -65,7 +65,7 @@ const CategoryForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="categoryText"
-                placeholder="Here's a new thought..."
+                placeholder="Category Description"
                 value={categoryText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
