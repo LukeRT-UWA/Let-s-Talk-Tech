@@ -75,7 +75,7 @@ const ArticleForm = ({ categoryId }) => {
             onSubmit={handleFormSubmit}
           >
             <div className="col-12">
-            <textarea
+            <input
                 name="articleName"
                 placeholder="Article Title"
                 value={title}
@@ -95,7 +95,7 @@ const ArticleForm = ({ categoryId }) => {
             
             </div>
             <div className="col-12 col-lg-9">
-            <input
+            <textarea
                 name="articleDescription"
                 placeholder="Article Description"
                 value={description}

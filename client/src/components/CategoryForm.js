@@ -66,7 +66,7 @@ const CategoryForm = () => {
             onSubmit={handleFormSubmit}
           >
             <div className="col-12">
-            <textarea
+            <input
                 name="categoryName"
                 placeholder="Category Name"
                 value={name}
@@ -76,7 +76,7 @@ const CategoryForm = () => {
             />
             </div>
             <div className="col-12 col-lg-9">
-            <input
+            <textarea
                 name="categoryDescription"
                 placeholder="Category Description"
                 value={description}
