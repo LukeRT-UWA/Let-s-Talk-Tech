@@ -53,8 +53,6 @@ const CommentForm = ({ articleId }) => {
 
   return (
     <div>
-      <h3>Want to add an article?</h3>
-
       {/* {Auth.loggedIn()  */}
       {(true) ? (
         <>
