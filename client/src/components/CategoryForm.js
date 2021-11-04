@@ -8,7 +8,10 @@ import { QUERY_CATEGORIES } from '../utils/queries';
 // import Auth from '../../utils/auth';
 
 const CategoryForm = () => {
-  const [categoryText, setCategoryText] = useState('');
+  const [formState, setFormState] = useState({
+      name: '',
+      description:''
+  });
 
   const [addCategory, { error }] = useMutation(ADD_CATEGORY, {
     update(cache, { data: { addCategory } }) {
@@ -31,14 +34,13 @@ const CategoryForm = () => {
 
     try {
       const { data } = await addCategory({
-        variables: {
-        //   name,
-        //   description
-        //   thoughtAuthor: Auth.getProfile().data.username,
-        },
+        variables: {...formState},
       });
 
-      setCategoryText('');
+      setFormState({
+        name: '',
+        description:''
+        });
     } catch (err) {
       console.error(err);
     }
@@ -47,8 +49,8 @@ const CategoryForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'categoryText' && value.length <= 280) {
-      setCategoryText(value);
+    if (name === 'categoryText') {
+      setFormState(value);
     }
   };
 
