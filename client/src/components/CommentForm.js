@@ -6,7 +6,7 @@ import { ADD_COMMENT } from '../utils/mutations';
 import { QUERY_COMMENT } from '../utils/queries';
 
 
-// import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 
 const CommentForm = ({ articleId }) => {
   const [commentText, setCommentText] = useState('');
@@ -53,8 +53,7 @@ const CommentForm = ({ articleId }) => {
 
   return (
     <div>
-      {/* {Auth.loggedIn()  */}
-      {(true) ? (
+      {Auth.loggedIn() ? (
         <>
           <form
             className="flex-row justify-center justify-space-between-md align-center"

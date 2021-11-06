@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { CREATE_CATEGORY } from '../utils/mutations';
 import { QUERY_CATEGORIES } from '../utils/queries';
 
-// import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 
 const CategoryForm = () => {
   const [name, setName] = useState('');
@@ -58,8 +58,8 @@ const CategoryForm = () => {
     <div>
       <h3>Want to add a category?</h3>
 
-      {/* {Auth.loggedIn()  */}
-      {(true) ? (
+      {/* {  */}
+      {Auth.loggedIn() ? (
         <>
           <form
             className="flex-row justify-center justify-space-between-md align-center"

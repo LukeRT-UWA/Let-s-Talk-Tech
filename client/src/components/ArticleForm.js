@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_ARTICLE } from '../utils/mutations';
 import { QUERY_ARTICLES_ONLY } from '../utils/queries';
 
-// import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 
 const ArticleForm = ({ categoryId }) => {
   const [title, setTitle] = useState('');
@@ -66,8 +66,8 @@ const ArticleForm = ({ categoryId }) => {
     <div>
       <h3>Want to add an article?</h3>
 
-      {/* {Auth.loggedIn()  */}
-      {(true) ? (
+
+      {Auth.loggedIn() ? (
         <>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
