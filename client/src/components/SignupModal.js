@@ -19,6 +19,7 @@ function SignupModal() {
         });
   
         Auth.login(data.addUser.token);
+        setOpen(false);
       } catch (e) {
         console.error(e);
       }
