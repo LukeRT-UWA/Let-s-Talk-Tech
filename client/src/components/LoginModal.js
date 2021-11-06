@@ -10,16 +10,16 @@ function LoginModal() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     
-    const [addUser, { error, data }] = useMutation(LOGIN_USER);
+    const [login, { error, data }] = useMutation(LOGIN_USER);
     
     const handleFormSubmit = async (event) => {
       event.preventDefault();
       try {
-        const { data } = await addUser({
+        const { data } = await login({
           variables: { username, password },
         });
   
-        Auth.login(data.addUser.token);
+        Auth.login(data.login.token);
         setOpen(false);
       } catch (e) {
         console.error(e);
