@@ -11,7 +11,7 @@ const styles = {
 }
 
 const ArticleList = ({ articles }) => {
-    if (!articles.length) {
+    if (articles && !articles.length) {
       return <h3>Can't find any articles!</h3>
     }
   

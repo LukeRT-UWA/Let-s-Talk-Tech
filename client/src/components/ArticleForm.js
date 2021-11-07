@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
+import LoginModal from "./LoginModal"
 import { ADD_ARTICLE } from '../utils/mutations';
 import { QUERY_ARTICLES_ONLY } from '../utils/queries';
 
@@ -118,8 +118,7 @@ const ArticleForm = ({ categoryId }) => {
         </>
       ) : (
         <p>
-          You need to be logged in add an article. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          You need to be logged in add an article. Please <LoginModal /> to add an article.
         </p>
       )}
     </div>

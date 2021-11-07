@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, Header, Button, Image, Grid, Form, Segment, Divider } from 'semantic-ui-react'
+import { Modal, Button, Grid, Form, Segment, Divider } from 'semantic-ui-react'
 import SignupModal from "./SignupModal"
 import { LOGIN_USER } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
@@ -42,7 +42,7 @@ function LoginModal() {
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={<Button content ="Login" icon="user" size="big" />}
+        trigger={<Button content ="Login" icon="user" size="medium" />}
       >
         <Segment placeholder>
     <Grid columns={2} relaxed='very'g>
@@ -72,7 +72,6 @@ function LoginModal() {
       </Grid.Column>
 
       <Grid.Column verticalAlign='middle'>
-        {/* <Button content='Sign up' icon='signup' size='big' /> */}
         <SignupModal />
       </Grid.Column>
     </Grid>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
 
+import { useMutation } from '@apollo/client';
+import LoginModal from "./LoginModal"
 import { ADD_COMMENT } from '../utils/mutations';
 import { QUERY_COMMENT } from '../utils/queries';
 
@@ -84,8 +84,7 @@ const CommentForm = ({ articleId }) => {
         </>
       ) : (
         <p>
-          You need to be logged in to add a comment. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          You need to be logged in to add a comment. Please <LoginModal /> to add a comment.
         </p>
       )}
     </div>

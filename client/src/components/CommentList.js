@@ -13,7 +13,7 @@ const styles = {
 
 
 const CommentList = ({ comments }) => {
-    if (!comments.length) {
+    if (comments && !comments.length) {
       return <h3>Can't find any comments!</h3>
     }
   

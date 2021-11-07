@@ -6,6 +6,7 @@ import CommentForm from "../components/CommentForm"
 import { Loader } from 'semantic-ui-react'
 import { QUERY_ARTICLE } from '../utils/queries';
 import { Card } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const styles = {
     headerStyle: {
@@ -43,7 +44,7 @@ const SingleArticle = () => {
                 <div>
                     <Card.Group>
                         <Card color='blue' style={styles.cardStyle} fluid>
-                            <h2>{article.link}</h2>
+                            <a href={article.link}><h2>{article.link}</h2></a>
                             <h3>{article.description}</h3>
                         </Card>
                     </Card.Group>

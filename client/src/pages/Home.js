@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import CategoryList from "../components/CategoryList";
 import CategoryForm from "../components/CategoryForm";
 import { QUERY_CATEGORIES } from '../utils/queries';
-import { Loader } from 'semantic-ui-react'
+import { Loader, Container } from 'semantic-ui-react'
 
 const styles = {
     headerStyle: {
@@ -16,8 +16,8 @@ const Home = () => {
     const categories = data?.categories || [];
   
     return (
-        
         <div>
+            
             <h1 style={styles.headerStyle}>Categories List</h1>
         {loading ? (
           <Loader active inline='centered' />
@@ -25,11 +25,9 @@ const Home = () => {
           <CategoryList
             categories={categories}
           />
-        )}
-        
- 
-      
+        )}     
           <CategoryForm />
+      
       </div>
     );
   };

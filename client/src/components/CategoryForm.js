@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
+import LoginModal from "./LoginModal"
 import { CREATE_CATEGORY } from '../utils/mutations';
 import { QUERY_CATEGORIES } from '../utils/queries';
+import { Card } from 'semantic-ui-react'
 
 import Auth from '../utils/auth';
+
+const styles = {
+  cardStyle:{
+    margin: '10px',
+    padding: '20px',
+    textAlign: "center"
+   
+  }
+}
 
 const CategoryForm = () => {
   const [name, setName] = useState('');
@@ -57,8 +66,8 @@ const CategoryForm = () => {
   return (
     <div>
       <h3>Want to add a category?</h3>
-
-      {/* {  */}
+      <Card fluid centered style={styles.cardStyle}>
+      
       {Auth.loggedIn() ? (
         <>
           <form
@@ -99,11 +108,13 @@ const CategoryForm = () => {
           </form>
         </>
       ) : (
+        
         <p>
-          You need to be logged in add a category. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          You need to be logged in to add a category. Please <LoginModal /> to add a category.
         </p>
+        
       )}
+      </Card>
     </div>
   );
 };

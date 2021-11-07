@@ -10,7 +10,7 @@ const styles = {
 }
 
 const CategoryList = ({ categories }) => {
-  if (!categories.length) {
+  if (categories && !categories.length) {
     return <h3>Can't find any categories!</h3>
   }
 
