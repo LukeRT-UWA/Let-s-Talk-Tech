@@ -44,7 +44,7 @@ const SingleArticle = () => {
                 <div>
                     <Card.Group>
                         <Card color='blue' style={styles.cardStyle} fluid>
-                            <a href={article.link}><h2>{article.link}</h2></a>
+                            <a href={article.link}><h2>Link to article</h2></a>
                             <h3>{article.description}</h3>
                         </Card>
                     </Card.Group>

@@ -7,7 +7,11 @@ const styles = {
       textAlign: 'center'
   },
   commentStyle: {
-      m: '20px'
+      height: '80px'
+  },
+  cardStyle: {
+      padding: '20px',
+      marginBottom: '40px'
   }
 }
 
@@ -18,17 +22,19 @@ const CommentList = ({ comments }) => {
     }
   
     return (
-      <Comment.Group>
-        {comments.map((comments) => (
-            <Comment color='blue' key={comments._id} >
-              <Comment.Avatar src='https://portal.staralliance.com/cms/aux-pictures/prototype-images/avatar-default.png/@@images/image.png' />
-                <Comment.Content>
-                  <Comment.Author>User</Comment.Author>
-                  <Comment.Text>Comment Text: {comments.commentText}</Comment.Text>
-                </Comment.Content>
-            </Comment>
-        ))}
-      </Comment.Group>
+      <Card fluid color='orange' style={styles.cardStyle}>
+        <Comment.Group>
+          {comments.map((comments) => (
+              <Comment color='blue' key={comments._id} >
+                <Comment.Avatar src='https://portal.staralliance.com/cms/aux-pictures/prototype-images/avatar-default.png/@@images/image.png' />
+                  <Comment.Content>
+                    <Comment.Author>User</Comment.Author>
+                    <Comment.Text>Comment Text: {comments.commentText}</Comment.Text>
+                  </Comment.Content>
+              </Comment>
+          ))}
+        </Comment.Group>
+      </Card>
     )
   }
   

@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_ARTICLE } from '../utils/mutations';
 import { QUERY_ARTICLES_ONLY } from '../utils/queries';
-
+import { Card } from 'semantic-ui-react'
 import Auth from '../utils/auth';
+
+const styles = {
+  cardStyle:{
+    marginTop: '10px',
+    padding: '20px',
+    textAlign: "center"
+   
+  }
+}
 
 const ArticleForm = ({ categoryId }) => {
   const [title, setTitle] = useState('');
@@ -65,7 +73,7 @@ const ArticleForm = ({ categoryId }) => {
   return (
     <div>
       <h3>Want to add an article?</h3>
-
+      <Card color='red' fluid centered style={styles.cardStyle}>
 
       {Auth.loggedIn() ? (
         <>
@@ -121,6 +129,7 @@ const ArticleForm = ({ categoryId }) => {
           You need to be logged in add an article. Please <LoginModal /> to add an article.
         </p>
       )}
+      </Card>
     </div>
   );
 };

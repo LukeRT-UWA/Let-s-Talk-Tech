@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-
+import { Card } from 'semantic-ui-react'
 import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_COMMENT } from '../utils/mutations';
 import { QUERY_COMMENT } from '../utils/queries';
-
-
 import Auth from '../utils/auth';
+
+const styles = {
+  cardStyle:{
+    marginTop: '10px',
+    padding: '20px',
+    textAlign: "center"
+   
+  }
+}
 
 const CommentForm = ({ articleId }) => {
   const [commentText, setCommentText] = useState('');
@@ -53,6 +60,7 @@ const CommentForm = ({ articleId }) => {
 
   return (
     <div>
+      <Card color='red' fluid centered style={styles.cardStyle}>
       {Auth.loggedIn() ? (
         <>
           <form
@@ -87,6 +95,7 @@ const CommentForm = ({ articleId }) => {
           You need to be logged in to add a comment. Please <LoginModal /> to add a comment.
         </p>
       )}
+      </Card>
     </div>
      );
 }

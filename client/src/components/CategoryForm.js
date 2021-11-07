@@ -9,7 +9,7 @@ import Auth from '../utils/auth';
 
 const styles = {
   cardStyle:{
-    margin: '10px',
+    marginTop: '10px',
     padding: '20px',
     textAlign: "center"
    
@@ -66,7 +66,7 @@ const CategoryForm = () => {
   return (
     <div>
       <h3>Want to add a category?</h3>
-      <Card fluid centered style={styles.cardStyle}>
+      <Card color='red' fluid centered style={styles.cardStyle}>
       
       {Auth.loggedIn() ? (
         <>
