@@ -6,7 +6,10 @@ const styles = {
     cardStyle:{
       margin: '10px',
       height: '180px'
-    }
+    },
+    cardGroupStyle: {
+      paddingBottom: '300px'
+  }
 }
 
 const CategoryList = ({ categories }) => {
@@ -15,7 +18,7 @@ const CategoryList = ({ categories }) => {
   }
 
   return (
-    <Card.Group centered>
+    <Card.Group centered style={styles.cardGroupStyle}>
       {categories.map((categories) => (
         <Link to={`/articles/${categories._id}`}>
           <Card color='blue' key={categories._id} link style={styles.cardStyle}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from 'semantic-ui-react'
+import { Card, TextArea, Button } from 'semantic-ui-react'
 import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_COMMENT } from '../utils/mutations';
@@ -16,6 +16,14 @@ const styles = {
     left: '25%',
     width: '50%'
   },
+  inputStyle: {
+    maxHeight: '100px',
+    width:'80%',
+    paddingBottom: '20px'
+  },
+  buttonStyle: {
+    margin: '20px'
+  }
 }
 
 const CommentForm = ({ articleId }) => {
@@ -67,27 +75,23 @@ const CommentForm = ({ articleId }) => {
       {Auth.loggedIn() ? (
         <>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12">
-            <textarea
+            <TextArea
                 name="commentText"
                 placeholder="Enter comment text"
                 value={commentText}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5' }}
+                style={styles.inputStyle}
                 onChange={handleChange}
             />
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Comment
-              </button>
+            <Button style={styles.buttonStyle}>Add Article</Button>
             </div>
             {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
+              <div>
                 {error.message}
               </div>
             )}

@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_ARTICLE } from '../utils/mutations';
 import { QUERY_ARTICLES_ONLY } from '../utils/queries';
-import { Card, Container } from 'semantic-ui-react'
+import { Card, Input, TextArea, Form, Button} from 'semantic-ui-react'
 import Auth from '../utils/auth';
 
 const styles = {
@@ -16,6 +16,14 @@ const styles = {
     left: '25%',
     width: '50%'
   },
+  inputStyle: {
+    maxHeight: '100px',
+    width:'80%',
+    paddingBottom: '20px'
+  },
+  buttonStyle: {
+    margin: '20px'
+  }
 }
 
 const ArticleForm = ({ categoryId }) => {
@@ -79,52 +87,49 @@ const ArticleForm = ({ categoryId }) => {
 
       {Auth.loggedIn() ? (
         <>
-          <form
-            className="flex-row justify-center justify-space-between-md align-center"
+          <Form
+            
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12">
-            <input
+            <div>
+            <Input
                 name="articleName"
                 placeholder="Article Title"
                 value={title}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5' }}
+                style={styles.inputStyle}
                 onChange={handleChange}
             />
             </div>
-            <div className="col-12 col-lg-9">
-            <input
+            <div>
+            <Input
                 name="articleLink"
                 placeholder="Link to article"
                 value={link}
-                className="form-input w-100"
+                style={styles.inputStyle}
                 onChange={handleChange}
             />
             
             </div>
-            <div className="col-12 col-lg-9">
-            <textarea
+            <div>
+            <TextArea
                 name="articleDescription"
                 placeholder="Article Description"
                 value={description}
-                className="form-input w-100"
+                style={styles.inputStyle}
                 onChange={handleChange}
             />
             
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Article
-              </button>
+            <div>
+            <Button style={styles.buttonStyle}>Add Article</Button>
             </div>
             {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
+              <div>
                 {error.message}
               </div>
             )}
-          </form>
+          </Form>
         </>
       ) : (
         <p>

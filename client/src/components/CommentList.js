@@ -4,7 +4,8 @@ import { Card, Divider, Comment } from 'semantic-ui-react'
 
 const styles = {
   headerStyle: {
-      textAlign: 'center'
+      textAlign: 'center',
+      paddingBottom: '300px'
   },
   commentStyle: {
       height: '80px'
@@ -12,8 +13,9 @@ const styles = {
   cardStyle: {
       padding: '20px',
       marginBottom: '40px'
-  }
+  } 
 }
+
 
 
 const CommentList = ({ comments }) => {

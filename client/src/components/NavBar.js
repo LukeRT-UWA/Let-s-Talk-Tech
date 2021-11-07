@@ -2,6 +2,7 @@ import React from 'react'
 import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import LoginModal from "./LoginModal"
+import { Button } from 'semantic-ui-react'
 import Auth from '../utils/auth';
 const styles = {
     menuStyle: {
@@ -22,9 +23,7 @@ const NavBar = () => {
         </Menu.Item>
         {Auth.loggedIn() ? (
         <Menu.Item>
-            <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                Logout
-            </button>
+            <Button content="Logout" icon="log out" onClick={logout}/>
         </Menu.Item>) :
         (<Menu.Item>
             <LoginModal />
