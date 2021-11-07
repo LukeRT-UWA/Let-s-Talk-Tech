@@ -10,7 +10,8 @@ const styles = {
   headerStyle: {
     textAlign: 'center',
     paddingTop: '30px',
-    paddingBottom: '20px'
+    paddingBottom: '20px',
+    color: 'white'
     },
     containerStyle: {
       minHeight: '100vh'

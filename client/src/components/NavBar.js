@@ -6,6 +6,7 @@ import Auth from '../utils/auth';
 const styles = {
     menuStyle: {
         marginBottom: '0px',
+        
     }
 }
 const NavBar = () => {
@@ -27,6 +28,11 @@ const NavBar = () => {
         (<Menu.Item>
             <LoginModal />
         </Menu.Item>)}
+        <Menu.Item right name='about'>
+            <Link to="/about">
+            <h1 >About</h1>
+            </Link>
+        </Menu.Item>
       </Menu>
     )
 }

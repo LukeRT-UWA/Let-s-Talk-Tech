@@ -6,13 +6,13 @@ import CommentForm from "../components/CommentForm"
 import { Loader } from 'semantic-ui-react'
 import { QUERY_ARTICLE } from '../utils/queries';
 import { Card, Container } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 import '../background.css';
 const styles = {
     headerStyle: {
         textAlign: 'center',
         paddingTop: '30px',
-        paddingBottom: '20px'
+        paddingBottom: '20px',
+        color: 'white'
     },
     commentStyle: {
         height: '80px'

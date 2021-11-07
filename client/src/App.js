@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Articles from './pages/Articles';
 import SingleArticle from './pages/SingleArticle';
 import NavBar from "./components/NavBar"
-
+import About from "./pages/About"
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -40,6 +40,9 @@ const client = new ApolloClient({
             </Route>
             <Route exact path="/article/:articleId">
                   <SingleArticle />
+            </Route>
+            <Route exact path="/about">
+                  <About />
             </Route>
           </div>
       </Router>

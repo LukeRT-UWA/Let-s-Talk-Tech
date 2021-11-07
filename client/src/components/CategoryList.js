@@ -9,6 +9,9 @@ const styles = {
     },
     cardGroupStyle: {
       paddingBottom: '300px'
+  },
+  headerStyle: {
+    color: 'white'
   }
 }
 
