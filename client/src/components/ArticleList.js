@@ -6,10 +6,11 @@ const styles = {
     cardStyle:{
       margin: '10px',
       height: '120px',
-      width: '800px'
+      width: '50vw'
     },
     cardGroupStyle: {
-        paddingBottom: '300px'
+        paddingBottom: '300px',
+        width: '100%'
     }
 }
 
@@ -20,7 +21,7 @@ const ArticleList = ({ articles }) => {
   
     return (
       <div style={styles.cardGroupStyle} >  
-      <Card.Group centered itemsPerRow={1} >
+      <Card.Group centered itemsPerRow={6}>
         {articles.map((articles) => (
           <Link to={`/article/${articles._id}`}>
             <Card color='blue' key={articles._id} link style={styles.cardStyle}>
