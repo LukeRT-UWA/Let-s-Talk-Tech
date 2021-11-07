@@ -68,7 +68,6 @@ const CategoryForm = () => {
 
   return (
     <div>
-      <h3>Want to add a category?</h3>
       <Card color='red' fluid centered style={styles.cardStyle}>
       
       {Auth.loggedIn() ? (

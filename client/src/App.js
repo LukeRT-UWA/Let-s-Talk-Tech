@@ -28,7 +28,7 @@ const client = new ApolloClient({
 
 const styles = {
   menuStyle: {
-      paddingBottom: '0px',
+      marginBottom: '0px',
   }
 }
 
