@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-import { Loader } from 'semantic-ui-react'
+import { Loader, Container } from 'semantic-ui-react'
 import ArticleList from "../components/ArticleList"
 import ArticleForm from "../components/ArticleForm"
 import { QUERY_ARTICLES } from '../utils/queries';
@@ -9,7 +9,7 @@ import { QUERY_ARTICLES } from '../utils/queries';
 const styles = {
     headerStyle: {
         textAlign: 'center'
-    }
+    },
 }
 
 const Articles = () => {
@@ -26,18 +26,16 @@ const Articles = () => {
   
     return (
         
-        <div>
+      <div>
+      <Container>  
             <h1 style={styles.headerStyle}>Articles List</h1>
         {loading ? (
           <Loader active inline='centered' />
         ) : (
-          <ArticleList
-            articles={articles}
-          />
+          <ArticleList articles={articles} />
         )}
-
-<ArticleForm categoryId={categoryId}/>
-
+      <ArticleForm categoryId={categoryId}/>
+      </Container>
       </div>
     );
 }

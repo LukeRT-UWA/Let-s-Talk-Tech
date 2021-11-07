@@ -5,7 +5,7 @@ import CommentList from "../components/CommentList"
 import CommentForm from "../components/CommentForm"
 import { Loader } from 'semantic-ui-react'
 import { QUERY_ARTICLE } from '../utils/queries';
-import { Card } from 'semantic-ui-react';
+import { Card, Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const styles = {
@@ -36,6 +36,7 @@ const SingleArticle = () => {
     return (
         
         <div>
+            <Container>
             <h1 style={styles.headerStyle}>{article.title}</h1>
         {loading ? (
           <Loader active inline='centered' />
@@ -57,6 +58,7 @@ const SingleArticle = () => {
 
 
         <CommentForm articleId={articleId}/>
+        </Container>
       </div>
     );
   };

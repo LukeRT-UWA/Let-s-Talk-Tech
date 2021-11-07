@@ -17,7 +17,7 @@ const Home = () => {
   
     return (
         <div>
-            
+        <Container>
             <h1 style={styles.headerStyle}>Categories List</h1>
         {loading ? (
           <Loader active inline='centered' />
@@ -27,7 +27,7 @@ const Home = () => {
           />
         )}     
           <CategoryForm />
-      
+      </Container>
       </div>
     );
   };

@@ -3,16 +3,17 @@ import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_ARTICLE } from '../utils/mutations';
 import { QUERY_ARTICLES_ONLY } from '../utils/queries';
-import { Card } from 'semantic-ui-react'
+import { Card, Container } from 'semantic-ui-react'
 import Auth from '../utils/auth';
 
 const styles = {
   cardStyle:{
     marginTop: '10px',
     padding: '20px',
-    textAlign: "center"
-   
-  }
+    textAlign: "center",
+    position: 'fiex',
+    bottom: '10px',
+  },
 }
 
 const ArticleForm = ({ categoryId }) => {
@@ -72,8 +73,7 @@ const ArticleForm = ({ categoryId }) => {
 
   return (
     <div>
-      <h3>Want to add an article?</h3>
-      <Card color='red' fluid centered style={styles.cardStyle}>
+      <Card style={styles.cardStyle} color='red' fluid centered >
 
       {Auth.loggedIn() ? (
         <>
