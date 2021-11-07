@@ -122,7 +122,7 @@ const ArticleForm = ({ categoryId }) => {
             </div>
 
             <div>
-            <Button style={styles.buttonStyle}>Add Article</Button>
+            <Button style={styles.buttonStyle} icon="add square" content="Add Article"/>
             </div>
             {error && (
               <div>

@@ -88,7 +88,7 @@ const CommentForm = ({ articleId }) => {
             </div>
 
             <div className="col-12 col-lg-3">
-            <Button style={styles.buttonStyle}>Add Article</Button>
+            <Button style={styles.buttonStyle} icon="add square" content="Add Comment"/>
             </div>
             {error && (
               <div>

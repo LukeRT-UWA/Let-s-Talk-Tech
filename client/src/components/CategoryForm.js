@@ -100,7 +100,7 @@ const CategoryForm = () => {
             />
             </div>
             <div>
-            <Button style={styles.buttonStyle}>Add Category</Button>
+            <Button content="Add Category" icon="add square" style={styles.buttonStyle}/>
             </div>
             {error && (
               <div>
