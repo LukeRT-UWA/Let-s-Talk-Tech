@@ -6,6 +6,9 @@
         
 Welcome to my Let's Talk Tech Repo. Let's Talk Tech is an application that allows users to add tech education articles by cateogory and then allows discussion of the article's contents.
 
+![image](https://user-images.githubusercontent.com/84198206/140648814-6433eaed-af84-49e7-93c7-d3c441f7d7d1.png)
+
+
 1. [Installation](#Installation)
 
 2. [Usage](#Usage)
