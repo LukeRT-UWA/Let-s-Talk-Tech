@@ -10,6 +10,10 @@ const styles = {
     headerStyle: {
         textAlign: 'center'
     },
+    containerStyle: {
+      position: 'relative',
+      height: '100vh'
+    }
 }
 
 const Articles = () => {

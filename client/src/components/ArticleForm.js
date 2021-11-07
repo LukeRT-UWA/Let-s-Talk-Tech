@@ -11,8 +11,10 @@ const styles = {
     marginTop: '10px',
     padding: '20px',
     textAlign: "center",
-    position: 'fiex',
+    position: 'fixed',
     bottom: '10px',
+    left: '25%',
+    width: '50%'
   },
 }
 
