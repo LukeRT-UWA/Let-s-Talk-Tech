@@ -26,17 +26,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const styles = {
-  menuStyle: {
-      marginBottom: '0px',
-  }
-}
-
   function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <NavBar style={styles.menuStyle}/>
+        <NavBar/>
           <div>
             <Route exact path="/">
                   <Home />
