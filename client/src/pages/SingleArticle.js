@@ -10,7 +10,9 @@ import { Link } from 'react-router-dom';
 import '../background.css';
 const styles = {
     headerStyle: {
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingTop: '30px',
+        paddingBottom: '20px'
     },
     commentStyle: {
         height: '80px'

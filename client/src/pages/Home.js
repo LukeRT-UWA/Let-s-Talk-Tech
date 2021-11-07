@@ -7,7 +7,9 @@ import { Loader, Container } from 'semantic-ui-react'
 import '../background.css';
 const styles = {
     headerStyle: {
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingTop: '30px',
+        paddingBottom: '20px'
     },
     containerStyle: {
       minHeight: '100vh'
