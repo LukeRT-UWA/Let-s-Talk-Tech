@@ -30,7 +30,7 @@ const About = () => {
         <Container style={styles.containerStyle}>
         <Card.Group centered itemsPerRow={1}>
             <Card style={styles.cardStyle}>    
-            <h3>Created by Luke Thompson</h3>
+            <h3>Created by Luke Thompson for UWA bootcamp 2021.</h3>
             <h3><a href="https://github.com/LukeRT-UWA/Let-s-Talk-Tech">Repo Link</a></h3>
             <h3><a href="https://www.linkedin.com/in/luke-thompson-9085b511a/">My Linkedin</a></h3>
             <h3>😎😎😎</h3>
