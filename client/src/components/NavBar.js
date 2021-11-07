@@ -1,8 +1,7 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Button, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import LoginModal from "./LoginModal"
-import { Button } from 'semantic-ui-react'
 import Auth from '../utils/auth';
 const styles = {
     menuStyle: {
