@@ -39,7 +39,7 @@ User authentication. Posting Categories, Articles and comments. Viewing of conte
 Please contact me to contribute
         
 ## Tests
-No test needed
+No tests have been run
     
 ## Questions
 I can be contacted at:
