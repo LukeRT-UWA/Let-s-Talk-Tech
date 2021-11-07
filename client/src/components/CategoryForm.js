@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { CREATE_CATEGORY } from '../utils/mutations';
 import { QUERY_CATEGORIES } from '../utils/queries';
-import { Card } from 'semantic-ui-react'
+import { Card, Form, Button, Input, TextArea } from 'semantic-ui-react'
 
 import Auth from '../utils/auth';
 
@@ -17,6 +17,11 @@ const styles = {
     left: '25%',
     width: '50%'
   },
+  inputStyle: {
+    maxHeight: '100px',
+    width:'80%',
+    paddingBottom: '20px'
+  }
 }
 
 const CategoryForm = () => {
@@ -72,22 +77,19 @@ const CategoryForm = () => {
       
       {Auth.loggedIn() ? (
         <>
-          <form
-            className="flex-row justify-center justify-space-between-md align-center"
+          <Form
             onSubmit={handleFormSubmit}
           >
             <div className="col-12">
-            <input
+            <Input style={styles.inputStyle}
                 name="categoryName"
                 placeholder="Category Name"
                 value={name}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5' }}
                 onChange={handleChange}
             />
             </div>
             <div className="col-12 col-lg-9">
-            <textarea
+            <TextArea style={styles.inputStyle}
                 name="categoryDescription"
                 placeholder="Category Description"
                 value={description}
@@ -98,16 +100,14 @@ const CategoryForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Category
-              </button>
+            <Button>Click Here</Button>
             </div>
             {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
                 {error.message}
               </div>
             )}
-          </form>
+          </Form>
         </>
       ) : (
         
