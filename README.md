@@ -27,7 +27,7 @@ To utalise this app navigate to https://lets-talk-tech.herokuapp.com/.
        
 ## Usage
        
-Users can view categories, articles, article content and comments without logging in. To create categories, articles and comments, please sign up/login using the relvant functionality
+Users can view categories, articles, article content and comments without logging in. To create categories, articles and comments, please sign up/login using the relevant functionality
 
 ## License
 
