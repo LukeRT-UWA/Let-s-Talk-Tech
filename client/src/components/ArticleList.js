@@ -9,7 +9,7 @@ const styles = {
       width: '50vw'
     },
     cardGroupStyle: {
-        paddingBottom: '300px',
+        paddingBottom: '500px',
         width: '100%'
     }
 }

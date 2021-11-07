@@ -23,7 +23,7 @@ const styles = {
     paddingBottom: '20px'
   },
   buttonStyle: {
-    margin: '20px'
+    marginTop: '10px'
   }
 }
 
