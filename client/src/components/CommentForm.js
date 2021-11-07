@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, TextArea, Button } from 'semantic-ui-react'
+import { Card, TextArea, Button, Form } from 'semantic-ui-react'
 import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_COMMENT } from '../utils/mutations';
@@ -13,8 +13,8 @@ const styles = {
     textAlign: "center",
     position: 'fixed',
     bottom: '10px',
-    left: '10%',
-    width: '80%'
+    left: '20%',
+    width: '60%'
   },
   inputStyle: {
     maxHeight: '100px',
@@ -74,7 +74,7 @@ const CommentForm = ({ articleId }) => {
       <Card color='red' fluid centered style={styles.cardStyle}>
       {Auth.loggedIn() ? (
         <>
-          <form
+          <Form
             onSubmit={handleFormSubmit}
           >
             <div className="col-12">
@@ -95,7 +95,7 @@ const CommentForm = ({ articleId }) => {
                 {error.message}
               </div>
             )}
-          </form>
+          </Form>
         </>
       ) : (
         <p>
