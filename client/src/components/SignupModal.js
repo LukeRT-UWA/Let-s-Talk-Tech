@@ -73,6 +73,11 @@ function SignupModal() {
           />
 
           <Button content='Register' primary />
+          {error && (
+              <div>
+                {error.message}
+              </div>
+            )}
         </Form>
       </Grid.Column>
 

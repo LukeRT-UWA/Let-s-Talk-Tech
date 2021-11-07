@@ -68,6 +68,11 @@ function LoginModal() {
           />
 
           <Button content='Login' primary />
+          {error && (
+              <div>
+                {error.message}
+              </div>
+            )}
         </Form>
       </Grid.Column>
 
