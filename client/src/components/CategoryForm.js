@@ -21,6 +21,9 @@ const styles = {
     maxHeight: '100px',
     width:'80%',
     paddingBottom: '20px'
+  },
+  buttonStyle: {
+    margin: '20px'
   }
 }
 
@@ -80,7 +83,7 @@ const CategoryForm = () => {
           <Form
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12">
+            <div>
             <Input style={styles.inputStyle}
                 name="categoryName"
                 placeholder="Category Name"
@@ -88,22 +91,19 @@ const CategoryForm = () => {
                 onChange={handleChange}
             />
             </div>
-            <div className="col-12 col-lg-9">
+            <div>
             <TextArea style={styles.inputStyle}
                 name="categoryDescription"
                 placeholder="Category Description"
                 value={description}
-                className="form-input w-100"
                 onChange={handleChange}
             />
-            
             </div>
-
-            <div className="col-12 col-lg-3">
-            <Button>Click Here</Button>
+            <div>
+            <Button style={styles.buttonStyle}>Add Category</Button>
             </div>
             {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
+              <div>
                 {error.message}
               </div>
             )}
