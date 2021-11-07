@@ -10,9 +10,12 @@ const styles = {
   cardStyle:{
     marginTop: '10px',
     padding: '20px',
-    textAlign: "center"
-   
-  }
+    textAlign: "center",
+    position: 'fixed',
+    bottom: '10px',
+    left: '25%',
+    width: '50%'
+  },
 }
 
 const CommentForm = ({ articleId }) => {

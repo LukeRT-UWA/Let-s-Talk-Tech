@@ -4,13 +4,13 @@ import CategoryList from "../components/CategoryList";
 import CategoryForm from "../components/CategoryForm";
 import { QUERY_CATEGORIES } from '../utils/queries';
 import { Loader, Container } from 'semantic-ui-react'
-
+import '../background.css';
 const styles = {
     headerStyle: {
         textAlign: 'center'
     },
     containerStyle: {
-      backgroundColor: 'red'
+      minHeight: '100vh'
     }
 }
 
@@ -19,7 +19,7 @@ const Home = () => {
     const categories = data?.categories || [];
   
     return (
-        <div>
+        <div className='background'>
         <Container style={styles.containerStyle}>
             <h1 style={styles.headerStyle}>Categories List</h1>
         {loading ? (

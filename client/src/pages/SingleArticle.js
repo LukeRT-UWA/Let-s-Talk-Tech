@@ -7,7 +7,7 @@ import { Loader } from 'semantic-ui-react'
 import { QUERY_ARTICLE } from '../utils/queries';
 import { Card, Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-
+import '../background.css';
 const styles = {
     headerStyle: {
         textAlign: 'center'
@@ -18,7 +18,10 @@ const styles = {
     cardStyle: {
         padding: '20px',
         marginBottom: '40px'
-    }
+    },
+    containerStyle: {
+        minHeight: '100vh'
+      }
 }
 
 const SingleArticle = () => {
@@ -35,8 +38,8 @@ const SingleArticle = () => {
   
     return (
         
-        <div>
-            <Container>
+        <div className='background'>
+            <Container style={styles.containerStyle}>
             <h1 style={styles.headerStyle}>{article.title}</h1>
         {loading ? (
           <Loader active inline='centered' />

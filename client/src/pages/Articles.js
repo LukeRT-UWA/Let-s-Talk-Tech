@@ -5,14 +5,13 @@ import { Loader, Container } from 'semantic-ui-react'
 import ArticleList from "../components/ArticleList"
 import ArticleForm from "../components/ArticleForm"
 import { QUERY_ARTICLES } from '../utils/queries';
-
+import '../background.css';
 const styles = {
     headerStyle: {
         textAlign: 'center'
     },
     containerStyle: {
-      position: 'relative',
-      height: '100vh'
+      minHeight: '100vh'
     }
 }
 
@@ -30,8 +29,8 @@ const Articles = () => {
   
     return (
         
-      <div>
-      <Container>  
+      <div className='background'>
+      <Container style={styles.containerStyle}>  
             <h1 style={styles.headerStyle}>Articles List</h1>
         {loading ? (
           <Loader active inline='centered' />

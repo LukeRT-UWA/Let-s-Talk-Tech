@@ -3,14 +3,18 @@ import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import LoginModal from "./LoginModal"
 import Auth from '../utils/auth';
-
+const styles = {
+    menuStyle: {
+        paddingBottom: '0px',
+    }
+}
 const NavBar = () => {
     const logout = (event) => {
         event.preventDefault();
         Auth.logout();
     };
     return (
-      <Menu>
+      <Menu style={styles.paddingBottom}>
         <Menu.Item name='home'>
             <Link to="/">
             <h1 >Let's Talk Tech</h1>
