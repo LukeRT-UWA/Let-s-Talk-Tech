@@ -35,7 +35,7 @@ MIT_License
        
 ## Features
        
-User authentication. Posting Categories, Articles and comments. Viewing of contents without authentication.
+User authentication. Posting Categories, Articles and Comments. Viewing of contents without authentication.
         
 ## How to Contribute
         
