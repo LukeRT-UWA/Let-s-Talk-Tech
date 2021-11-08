@@ -38,7 +38,6 @@ function SignupModal() {
 
     return (
       <Modal 
-        dimmer={false}
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
