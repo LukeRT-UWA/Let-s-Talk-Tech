@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { CREATE_CATEGORY } from '../utils/mutations';
 import { QUERY_CATEGORIES } from '../utils/queries';
-import { Card, Form, Button, Input, TextArea, Message } from 'semantic-ui-react'
+import { Card, Form, Button, Input, TextArea, Message, Grid } from 'semantic-ui-react'
 
 import Auth from '../utils/auth';
 
@@ -19,7 +19,7 @@ const styles = {
   },
   inputStyle: {
     maxHeight: '100px',
-    width:'80%',
+    width:'100%',
     paddingBottom: '20px'
   },
   buttonStyle: {
@@ -79,10 +79,12 @@ const CategoryForm = () => {
       <Card color='red' fluid centered style={styles.cardStyle}>
       
       {Auth.loggedIn() ? (
-        <>
+       
           <Form
             onSubmit={handleFormSubmit}
           >
+             <Grid columns={2} relaxed='very'>
+            <Grid.Column>
             <div>
             <Input style={styles.inputStyle}
                 name="categoryName"
@@ -99,7 +101,11 @@ const CategoryForm = () => {
                 onChange={handleChange}
             />
             </div>
+            </Grid.Column>
+
+            <Grid.Column verticalAlign='middle'>  
             <div>
+            
             <Button content="Add Category" icon="add square" style={styles.buttonStyle}/>
             </div>
             {error && (
@@ -107,8 +113,10 @@ const CategoryForm = () => {
                 <p>{error.message}</p>
               </Message>
             )}
+            </Grid.Column>
+            </Grid>
           </Form>
-        </>
+          
       ) : (
         
         <p>

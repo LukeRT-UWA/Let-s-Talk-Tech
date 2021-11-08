@@ -45,7 +45,7 @@ function LoginModal() {
         trigger={<Button content ="Login" icon="user" size="medium" />}
       >
         <Segment placeholder>
-    <Grid columns={2} relaxed='very'g>
+    <Grid columns={2} relaxed='very'>
       <Grid.Column>
         <Form onSubmit={handleFormSubmit}>
           <Form.Input
