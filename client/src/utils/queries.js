@@ -16,14 +16,7 @@ query category($categoryId: ID!) {
     category(categoryId: $categoryId) {
       _id
       name
-      description
-     	articles {
-        _id
-        categoryId
-        title
-      	link
-      	description}
-    }
+      description}
   }
 `;
 

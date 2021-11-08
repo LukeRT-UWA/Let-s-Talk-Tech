@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Loader, Container } from 'semantic-ui-react'
 import ArticleList from "../components/ArticleList"
 import ArticleForm from "../components/ArticleForm"
-import { QUERY_ARTICLES } from '../utils/queries';
+import { QUERY_ARTICLES, QUERY_CATEGORY } from '../utils/queries';
 import '../background.css';
 const styles = {
   headerStyle: {
@@ -25,16 +25,21 @@ const Articles = () => {
     const { loading, data } = useQuery(QUERY_ARTICLES, {
         variables: { categoryId: categoryId}
     });
-    
-    
+
+    const category = useQuery(QUERY_CATEGORY, {
+      variables: { categoryId: categoryId }
+    });
     
     const articles = data?.articles || [];
+    const categoryName = category.data.category.name
   
     return (
         
       <div className='background'>
       <Container style={styles.containerStyle}>  
-            <h1 style={styles.headerStyle}>Articles List</h1>
+
+
+          <h1 style={styles.headerStyle}>{categoryName} Articles List</h1>
         {loading ? (
           <Loader active inline='centered' />
         ) : (
