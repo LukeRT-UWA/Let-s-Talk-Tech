@@ -91,7 +91,7 @@ const ArticleForm = ({ categoryId }) => {
             
             onSubmit={handleFormSubmit}
           >
-            <Grid columns={2} relaxed='very'>
+            <Grid celled='internally' columns={2} relaxed='very'>
             <Grid.Column>
             <div>
             <Input

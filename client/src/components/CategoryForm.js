@@ -83,7 +83,7 @@ const CategoryForm = () => {
           <Form
             onSubmit={handleFormSubmit}
           >
-             <Grid columns={2} relaxed='very'>
+             <Grid celled='internally'columns={2} relaxed='very'>
             <Grid.Column>
             <div>
             <Input style={styles.inputStyle}
