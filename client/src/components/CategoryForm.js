@@ -49,7 +49,7 @@ const CategoryForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    
     try {
       const { data } = await createCategory({
         variables: {name, description},
