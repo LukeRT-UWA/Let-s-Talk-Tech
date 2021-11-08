@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Button, Image } from 'semantic-ui-react'
+import { Menu, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import LoginModal from "./LoginModal"
 import Auth from '../utils/auth';

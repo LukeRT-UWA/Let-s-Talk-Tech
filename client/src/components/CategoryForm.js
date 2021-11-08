@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { CREATE_CATEGORY } from '../utils/mutations';
 import { QUERY_CATEGORIES } from '../utils/queries';
-import { Card, Form, Button, Input, TextArea } from 'semantic-ui-react'
+import { Card, Form, Button, Input, TextArea, Message } from 'semantic-ui-react'
 
 import Auth from '../utils/auth';
 
@@ -103,9 +103,9 @@ const CategoryForm = () => {
             <Button content="Add Category" icon="add square" style={styles.buttonStyle}/>
             </div>
             {error && (
-              <div>
-                {error.message}
-              </div>
+              <Message>
+                <p>{error.message}</p>
+              </Message>
             )}
           </Form>
         </>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, TextArea, Button, Form } from 'semantic-ui-react'
+import { Card, TextArea, Button, Form, Message } from 'semantic-ui-react'
 import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_COMMENT } from '../utils/mutations';
@@ -91,9 +91,9 @@ const CommentForm = ({ articleId }) => {
             <Button style={styles.buttonStyle} icon="add square" content="Add Comment"/>
             </div>
             {error && (
-              <div>
-                {error.message}
-              </div>
+              <Message>
+                <p>{error.message}</p>
+              </Message>
             )}
           </Form>
         </>

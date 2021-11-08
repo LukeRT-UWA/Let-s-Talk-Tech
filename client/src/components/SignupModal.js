@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, Header, Button, Image, Grid, Form, Segment, Divider } from 'semantic-ui-react'
+import { Modal, Button, Grid, Form, Segment, Divider, Message} from 'semantic-ui-react'
 import { ADD_USER } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
@@ -74,9 +74,9 @@ function SignupModal() {
 
           <Button content='Register' primary />
           {error && (
-              <div>
-                {error.message}
-              </div>
+              <Message>
+                <p>{error.message}</p>
+              </Message>
             )}
         </Form>
       </Grid.Column>
