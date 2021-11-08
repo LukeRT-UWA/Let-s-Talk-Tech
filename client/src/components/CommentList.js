@@ -12,7 +12,9 @@ const styles = {
   },
   cardStyle: {
       padding: '20px',
-      marginBottom: '40px'
+  },
+  commentGroupStyle: {
+      paddingBottom: '200px',
   } 
 }
 
@@ -24,6 +26,7 @@ const CommentList = ({ comments }) => {
     }
   
     return (
+      <div style={styles.commentGroupStyle}>
       <Card fluid color='orange' style={styles.cardStyle}>
         <Comment.Group>
           {comments.map((comments) => (
@@ -37,6 +40,7 @@ const CommentList = ({ comments }) => {
           ))}
         </Comment.Group>
       </Card>
+      </div>
     )
   }
   
