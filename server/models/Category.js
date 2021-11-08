@@ -3,12 +3,12 @@ const { Schema, model } = require('mongoose');
 const categorySchema = new Schema({
   name: {
     type: String,
-    required: "Please enter a valid category name",
+    required: "Please provide a category name",
     unique: "Category already exists!",
   },
   description: {
     type: String,
-    required: "Please enter a valid description",
+    required: "Please provide a description",
   },
   articles: [
   {
