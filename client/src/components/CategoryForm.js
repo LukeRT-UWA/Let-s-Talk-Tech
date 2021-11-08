@@ -14,8 +14,8 @@ const styles = {
     textAlign: "center",
     position: 'fixed',
     bottom: '10px',
-    left: '20%',
-    width: '60%'
+    left: '35%',
+    width: '30%'
   },
   inputStyle: {
     maxHeight: '100px',
