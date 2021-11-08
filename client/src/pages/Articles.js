@@ -26,19 +26,22 @@ const Articles = () => {
         variables: { categoryId: categoryId}
     });
 
-    const { data: data2, error: error2, loading: loading2} = useQuery(QUERY_CATEGORY, {
+    const { loading: loading2, data: data2 } = useQuery(QUERY_CATEGORY, {
       variables: { categoryId: categoryId }
     });
     
     const articles = data?.articles || [];
-    const category = data2.category || [];
+    const category = data2?.category || [];
+
+    console.log(category)
     return (
         
       <div className='background'>
       <Container style={styles.containerStyle}>  
-
-
+      {loading2 ? ( "..."
+        ) : (
           <h1 style={styles.headerStyle}>{category.name} Articles List</h1>
+        )}          
         {loading ? (
           <Loader active inline='centered' />
         ) : (
