@@ -15,7 +15,7 @@ const NavBar = () => {
         Auth.logout();
     };
     return (
-      <Menu style={styles.menuStyle}>
+      <Menu stackable style={styles.menuStyle}>
         <Menu.Item name='home'>
             <Link to="/">
             <h1 >Let's Talk Tech</h1>
