@@ -20,7 +20,7 @@ const styles = {
   inputStyle: {
     maxHeight: '100px',
     width:'100%',
-    paddingBottom: '20px'
+    paddingBottom: '10px'
   },
   buttonStyle: {
     marginTop: '10px'
