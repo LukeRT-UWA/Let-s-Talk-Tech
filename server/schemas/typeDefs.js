@@ -31,9 +31,11 @@ const typeDefs = gql`
   type Comment {
     _id: ID!
     commentText: String
+    commentAuthor: String
   }
 
   type Query {
+    user(username: String!): User
     categories: [Category]
     category(categoryId: ID!): Category
     articles(categoryId: ID!): [Article]
@@ -46,7 +48,7 @@ const typeDefs = gql`
     addUser(username: String!, password: String!): Auth
     createCategory(name: String!, description: String!): Category 
     createArticle(categoryId: String, title: String!, link: String!, description: String!): Article
-    createComment(articleId: ID!, commentText: String!): Article
+    createComment(articleId: ID!, commentText: String!, commentAuthor: String): Article
   }
 
 `;

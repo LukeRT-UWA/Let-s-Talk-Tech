@@ -54,6 +54,7 @@ mutation createComment($articleId:ID!, $commentText:String!){
       comments {
         _id
         commentText
+        commentAuthor
       }
     }
   }

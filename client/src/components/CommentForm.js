@@ -52,9 +52,10 @@ const CommentForm = ({ articleId }) => {
 
     try {
       const { data } = await createComment({
-        variables: {articleId, commentText},
+        variables: {articleId, commentText, commentAuthor: Auth.getProfile().data.username},
       });
 
+      
 
       setCommentText('');
     } catch (err) {

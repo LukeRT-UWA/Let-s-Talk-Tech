@@ -63,6 +63,7 @@ query article($articleId: ID!){
       comments {
         _id
         commentText
+        commentAuthor
       }
     }
   }
@@ -72,6 +73,7 @@ query comment($articleId:ID!){
     comments(articleId: $articleId) {
       _id
       commentText
+      commentAuthor
     }
   }
 `;

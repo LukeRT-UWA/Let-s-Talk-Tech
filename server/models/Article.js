@@ -29,6 +29,9 @@ const articleSchema = new Schema({
         minlength: 1,
         maxlength: [280, "Please enter a comment that is under 280 characters"]
       },
+      commentAuthor: {
+        type: String,
+      },
     },
   ],
 });

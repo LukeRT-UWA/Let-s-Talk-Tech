@@ -10,6 +10,9 @@ const resolvers = {
     category: async (parent, { categoryId }) => {
       return Category.findOne({_id: categoryId}).populate('articles');
     },
+    user: async (parent, { username }) => {
+      return User.findOne({ username })
+    },
     articles: async (parent, {categoryId}) => {
       return Article.find({categoryId}).populate('comments')
     },
@@ -53,11 +56,11 @@ const resolvers = {
       )
       return article
     },
-    createComment: async (parent, { articleId, commentText }) => {
+    createComment: async (parent, { articleId, commentText }, context) => {
       return Article.findOneAndUpdate(
         { _id: articleId },
         {
-          $addToSet: { comments: { commentText } },
+          $addToSet: { comments: { commentText, commentAuthor: context.user.username } },
         },
         {
           new: true,
