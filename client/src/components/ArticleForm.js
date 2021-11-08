@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import LoginModal from "./LoginModal"
 import { ADD_ARTICLE } from '../utils/mutations';
 import { QUERY_ARTICLES_ONLY } from '../utils/queries';
-import { Card, Input, TextArea, Form, Button, Message, Grid, Segment, Divider} from 'semantic-ui-react'
+import { Card, Input, TextArea, Form, Button, Message, Grid} from 'semantic-ui-react'
 import Auth from '../utils/auth';
 
 const styles = {
@@ -19,7 +19,7 @@ const styles = {
   inputStyle: {
     maxHeight: '100px',
     width:'80%',
-    paddingBottom: '20px'
+    paddingBottom: '10px'
   },
   buttonStyle: {
     marginTop: '10px'
@@ -91,6 +91,8 @@ const ArticleForm = ({ categoryId }) => {
             
             onSubmit={handleFormSubmit}
           >
+            <Grid columns={2} relaxed='very'>
+            <Grid.Column>
             <div>
             <Input
                 name="articleName"
@@ -120,7 +122,8 @@ const ArticleForm = ({ categoryId }) => {
             />
             
             </div>
-
+            </Grid.Column>
+            <Grid.Column verticalAlign='middle'>
             <div>
             <Button style={styles.buttonStyle} icon="add square" content="Add Article"/>
             </div>
@@ -129,6 +132,9 @@ const ArticleForm = ({ categoryId }) => {
                 <p>{error.message}</p>
               </Message>
             )}
+
+            </Grid.Column>
+          </Grid>
           </Form>
         </>
       ) : (
