@@ -19,7 +19,7 @@ Welcome to my Let's Talk Tech Repo. Let's Talk Tech is an application that allow
 
 5. [Tests](#Tests)
 
-6. [Questions](#Questions)
+6. [Contact](#Contact)
         
 ## Installation
        
