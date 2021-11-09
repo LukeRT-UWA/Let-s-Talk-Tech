@@ -23,7 +23,7 @@ Welcome to my Let's Talk Tech Repo. Let's Talk Tech is an application that allow
         
 ## Installation
        
-To utalise this app navigate to https://lets-talk-tech.herokuapp.com/. 
+To utilise this app navigate to https://lets-talk-tech.herokuapp.com/. 
        
 ## Usage
        
