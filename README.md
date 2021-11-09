@@ -44,7 +44,7 @@ Please contact me to contribute.
 ## Tests
 No tests have been run.
     
-## Questions
+## Contact
 I can be contacted at:
 https://github.com/LukeRT-UWA
 
