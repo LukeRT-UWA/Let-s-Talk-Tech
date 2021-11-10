@@ -33,8 +33,8 @@ const CommentList = ({ comments }) => {
               <Comment color='blue' key={comments._id} >
                 <Comment.Avatar src='https://portal.staralliance.com/cms/aux-pictures/prototype-images/avatar-default.png/@@images/image.png' />
                   <Comment.Content>
-                    <Comment.Author>Author: {comments.commentAuthor}</Comment.Author>
-                    <Comment.Text>Comment Text: {comments.commentText}</Comment.Text>
+                    <Comment.Author>{comments.commentAuthor}</Comment.Author>
+                    <Comment.Text>{comments.commentText}</Comment.Text>
                   </Comment.Content>
               </Comment>
           ))}
