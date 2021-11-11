@@ -16,9 +16,6 @@ const styles = {
     containerStyle: {
       minHeight: '100vh'
     },
-    loaderStyle: {
-      marginTop: '10px'
-    }
 }
 
 const Articles = () => {
@@ -46,7 +43,7 @@ const Articles = () => {
           <h1 style={styles.headerStyle}>{category.name} Articles List</h1>
         )}          
         {loading ? (
-          <Loader style={styles.loaderStyle} active inline='centered' />
+          <Loader active inline='centered' />
         ) : (
           <ArticleList articles={articles} />
         )}
