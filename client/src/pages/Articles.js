@@ -38,7 +38,7 @@ const Articles = () => {
         
       <div className='background'>
       <Container style={styles.containerStyle}>  
-      {loading2 ? ( <Loader active inline='centered' />
+      {loading2 ? ( " "
         ) : (
           <h1 style={styles.headerStyle}>{category.name} Articles List</h1>
         )}          
